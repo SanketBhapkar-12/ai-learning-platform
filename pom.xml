@@ -31,6 +31,12 @@
 	</properties>
 	<dependencies>
 
+    <!--Existing Spring dependencies-->
+    <dependency>
+        <groupId>com.google.genai</groupId>
+        <artifactId>google-genai</artifactId>
+        <version>1.67.0</version>
+    </dependency>
     <!-- Spring Web / REST API -->
     <dependency>
         <groupId>org.springframework.boot</groupId>
