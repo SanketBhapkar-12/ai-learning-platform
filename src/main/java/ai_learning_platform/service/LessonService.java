@@ -46,8 +46,8 @@ public class LessonService {
     }
 
     public List<Lesson> getLessonsByTopic(
-            String topic) {
+        String topic) {
 
-        return lessonRepository.findByTopic(topic);
+        return lessonRepository.findByTopicStartingWith(topic);
     }
 }

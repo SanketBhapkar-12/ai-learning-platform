@@ -9,5 +9,5 @@ public interface LessonRepository extends MongoRepository<Lesson, String> {
 
     List<Lesson> findByModuleId(String moduleId);
 
-    List<Lesson> findByTopic(String topic);
+    List<Lesson> findByTopicStartingWith(String topic);
 }
