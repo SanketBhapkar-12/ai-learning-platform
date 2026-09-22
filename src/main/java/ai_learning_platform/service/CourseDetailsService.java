@@ -4,8 +4,8 @@ import ai_learning_platform.dto.CourseDetailsResponse;
 import ai_learning_platform.dto.LessonResponse;
 import ai_learning_platform.dto.ModuleDetailsResponse;
 import ai_learning_platform.model.Course;
-import ai_learning_platform.model.Module;
 import ai_learning_platform.model.Lesson;
+import ai_learning_platform.model.Module;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -72,6 +72,7 @@ public class CourseDetailsService {
                 lesson.getModuleId(),
                 lesson.getTitle(),
                 lesson.getContent(),
+                lesson.getTopic(),
                 lesson.getOrder(),
                 lesson.getEstimatedMinutes()
         );

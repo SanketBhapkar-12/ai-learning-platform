@@ -8,4 +8,6 @@ import java.util.List;
 public interface LessonRepository extends MongoRepository<Lesson, String> {
 
     List<Lesson> findByModuleId(String moduleId);
+
+    List<Lesson> findByTopic(String topic);
 }

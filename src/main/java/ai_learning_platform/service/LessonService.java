@@ -14,8 +14,9 @@ public class LessonService {
     private final LessonRepository lessonRepository;
     private final ModuleRepository moduleRepository;
 
-    public LessonService(LessonRepository lessonRepository,
-                         ModuleRepository moduleRepository) {
+    public LessonService(
+            LessonRepository lessonRepository,
+            ModuleRepository moduleRepository) {
 
         this.lessonRepository = lessonRepository;
         this.moduleRepository = moduleRepository;
@@ -29,16 +30,24 @@ public class LessonService {
         if (!moduleExists) {
             throw new ModuleNotFoundException(lesson.getModuleId());
         }
-    
 
         return lessonRepository.save(lesson);
     }
 
     public List<Lesson> getAllLessons() {
+
         return lessonRepository.findAll();
     }
 
-    public List<Lesson> getLessonsByModuleId(String moduleId) {
+    public List<Lesson> getLessonsByModuleId(
+            String moduleId) {
+
         return lessonRepository.findByModuleId(moduleId);
+    }
+
+    public List<Lesson> getLessonsByTopic(
+            String topic) {
+
+        return lessonRepository.findByTopic(topic);
     }
 }

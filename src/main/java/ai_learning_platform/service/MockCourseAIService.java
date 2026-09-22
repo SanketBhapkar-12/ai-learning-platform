@@ -20,6 +20,7 @@ public class MockCourseAIService {
         lesson1.setContent(
                 "Learn the fundamental concepts and terminology of " + topic + "."
         );
+        lesson1.setTopic(topic + " Fundamentals");
         lesson1.setOrder(1);
         lesson1.setEstimatedMinutes(30);
 
@@ -28,6 +29,7 @@ public class MockCourseAIService {
         lesson2.setContent(
                 "Understand the important concepts and practical foundations of " + topic + "."
         );
+        lesson2.setTopic(topic + " Fundamentals");
         lesson2.setOrder(2);
         lesson2.setEstimatedMinutes(45);
 
@@ -44,6 +46,7 @@ public class MockCourseAIService {
         lesson3.setContent(
                 "Apply the concepts of " + topic + " by building a practical example."
         );
+        lesson3.setTopic(topic + " Practical Development");
         lesson3.setOrder(1);
         lesson3.setEstimatedMinutes(60);
 
@@ -59,8 +62,11 @@ public class MockCourseAIService {
 
         course.setTitle(topic + " - Complete Learning Path");
         course.setDescription(
-                "A structured learning path for mastering " +
-                topic + " at " + difficulty + " level."
+                "A structured learning path for mastering "
+                        + topic
+                        + " at "
+                        + difficulty
+                        + " level."
         );
         course.setTopic(topic);
         course.setDifficulty(difficulty);

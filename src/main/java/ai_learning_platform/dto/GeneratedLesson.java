@@ -4,6 +4,7 @@ public class GeneratedLesson {
 
     private String title;
     private String content;
+    private String topic;
     private int order;
     private int estimatedMinutes;
 
@@ -24,6 +25,14 @@ public class GeneratedLesson {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getTopic() {
+        return topic;
+    }
+
+    public void setTopic(String topic) {
+        this.topic = topic;
     }
 
     public int getOrder() {

@@ -14,6 +14,9 @@ public class LessonRequest {
     @NotBlank(message = "Lesson content is required")
     private String content;
 
+    @NotBlank(message = "Lesson topic is required")
+    private String topic;
+
     @Min(value = 1, message = "Lesson order must be at least 1")
     private int order;
 
@@ -45,6 +48,14 @@ public class LessonRequest {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getTopic() {
+        return topic;
+    }
+
+    public void setTopic(String topic) {
+        this.topic = topic;
     }
 
     public int getOrder() {

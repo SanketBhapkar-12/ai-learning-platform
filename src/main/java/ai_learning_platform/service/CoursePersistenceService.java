@@ -30,7 +30,6 @@ public class CoursePersistenceService {
 
     public Course saveGeneratedCourse(GeneratedCourse generatedCourse) {
 
-        // 1. Save the main course
         Course course = new Course(
                 generatedCourse.getTitle(),
                 generatedCourse.getDescription(),
@@ -41,7 +40,6 @@ public class CoursePersistenceService {
 
         Course savedCourse = courseRepository.save(course);
 
-        // 2. Save modules
         for (GeneratedModule generatedModule : generatedCourse.getModules()) {
 
             Module module = new Module(
@@ -53,13 +51,13 @@ public class CoursePersistenceService {
 
             Module savedModule = moduleRepository.save(module);
 
-            // 3. Save lessons
             for (GeneratedLesson generatedLesson : generatedModule.getLessons()) {
 
                 Lesson lesson = new Lesson(
                         savedModule.getId(),
                         generatedLesson.getTitle(),
                         generatedLesson.getContent(),
+                        generatedLesson.getTopic(),
                         generatedLesson.getOrder(),
                         generatedLesson.getEstimatedMinutes()
                 );

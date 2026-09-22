@@ -12,21 +12,25 @@ public class Lesson {
     private String moduleId;
     private String title;
     private String content;
+    private String topic;
     private int order;
     private int estimatedMinutes;
 
     public Lesson() {
     }
 
-    public Lesson(String moduleId,
-                  String title,
-                  String content,
-                  int order,
-                  int estimatedMinutes) {
+    public Lesson(
+            String moduleId,
+            String title,
+            String content,
+            String topic,
+            int order,
+            int estimatedMinutes) {
 
         this.moduleId = moduleId;
         this.title = title;
         this.content = content;
+        this.topic = topic;
         this.order = order;
         this.estimatedMinutes = estimatedMinutes;
     }
@@ -45,6 +49,10 @@ public class Lesson {
 
     public String getContent() {
         return content;
+    }
+
+    public String getTopic() {
+        return topic;
     }
 
     public int getOrder() {
@@ -69,6 +77,10 @@ public class Lesson {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public void setTopic(String topic) {
+        this.topic = topic;
     }
 
     public void setOrder(int order) {

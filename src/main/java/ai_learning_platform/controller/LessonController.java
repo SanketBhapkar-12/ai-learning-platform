@@ -4,9 +4,7 @@ import ai_learning_platform.dto.LessonRequest;
 import ai_learning_platform.dto.LessonResponse;
 import ai_learning_platform.model.Lesson;
 import ai_learning_platform.service.LessonService;
-
 import jakarta.validation.Valid;
-
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -29,6 +27,7 @@ public class LessonController {
                 request.getModuleId(),
                 request.getTitle(),
                 request.getContent(),
+                request.getTopic(),
                 request.getOrder(),
                 request.getEstimatedMinutes()
         );
@@ -56,6 +55,15 @@ public class LessonController {
                 .map(this::convertToResponse)
                 .toList();
     }
+    @GetMapping("/topic/{topic}")
+    public List<LessonResponse> getLessonsByTopic(
+        @PathVariable String topic) {
+
+        return lessonService.getLessonsByTopic(topic)
+            .stream()
+            .map(this::convertToResponse)
+            .toList();
+    }
 
     private LessonResponse convertToResponse(Lesson lesson) {
 
@@ -64,6 +72,7 @@ public class LessonController {
                 lesson.getModuleId(),
                 lesson.getTitle(),
                 lesson.getContent(),
+                lesson.getTopic(),
                 lesson.getOrder(),
                 lesson.getEstimatedMinutes()
         );
