@@ -9,23 +9,26 @@ public class QuizQuestion {
     private List<String> options;
     private String correctAnswer;
     private String explanation;
+    private String topic;
 
     public QuizQuestion() {
     }
 
     public QuizQuestion(
-            String id,
-            String questionText,
-            List<String> options,
-            String correctAnswer,
-            String explanation) {
+        String id,
+        String questionText,
+        List<String> options,
+        String correctAnswer,
+        String explanation,
+        String topic) {
 
         this.id = id;
         this.questionText = questionText;
         this.options = options;
         this.correctAnswer = correctAnswer;
         this.explanation = explanation;
-    }
+        this.topic = topic;
+    }   
 
     public String getId() {
         return id;
@@ -46,6 +49,9 @@ public class QuizQuestion {
     public String getExplanation() {
         return explanation;
     }
+    public String getTopic() {
+        return topic;
+    }
 
     public void setId(String id) {
         this.id = id;
@@ -65,5 +71,8 @@ public class QuizQuestion {
 
     public void setExplanation(String explanation) {
         this.explanation = explanation;
+    }
+    public void setTopic(String topic) {
+        this.topic = topic;
     }
 }
